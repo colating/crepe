@@ -1,0 +1,59 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "crepe"
+dynamic = ["version"]
+description = "CREPE pitch tracker"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "Jong Wook Kim", email = "jongwook@nyu.edu" },
+    { name = "Justin Salamon" },
+]
+requires-python = ">=3.6"
+keywords = ["pitch", "audio", "deep learning"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Multimedia :: Sound/Audio :: Analysis",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+]
+dependencies = [
+    "numpy>=1.14.0,<2",
+    "scipy>=1.0.0",
+    "matplotlib>=2.1.0",
+    "resampy>=0.2.0",
+    "h5py",
+    "hmmlearn>=0.3.0",
+    "imageio>=2.3.0,<3.0",     # imwrite API changed in 3.x
+    "scikit-learn>=0.16",
+    "tensorflow>=2.0.0,<2.16", # 2.16+ requires numpy>=2
+]
+
+[project.scripts]
+crepe = "crepe.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/marl/crepe"
+Source = "https://github.com/marl/crepe"
+Tracker = "https://github.com/marl/crepe/issues"
+
+[tool.hatch.version]
+path = "crepe/version.py"
+
+[tool.hatch.build.hooks.custom]
+path = "build.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["crepe"]
+artifacts = [
+    "crepe/model-tiny.h5",
+    "crepe/model-small.h5",
+    "crepe/model-medium.h5",
+    "crepe/model-large.h5",
+    "crepe/model-full.h5",
+]
