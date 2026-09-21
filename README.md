@@ -10,6 +10,16 @@ CREPE Pitch Tracker
 [![Documentation Status](https://readthedocs.org/projects/crepe/badge/?version=latest)](http://crepe.readthedocs.io/en/latest/?badge=latest)-->
 
 
+## 变更
+
+源头 2年未更新：https://github.com/marl/crepe
+
+NewComer00 fork：1年内有更新。
+
+配套于：𝐄𝐱𝐩𝐫𝐞𝐬𝐬𝐢𝐯𝐞 | 适用于OpenUtau的DiffSinger歌手表情参数导入工具。从真实歌手的人声中提取表情，并导入到工程的相应轨道上 Migrate expressions from real singers to DiffSingers 
+
+---
+
 
 CREPE is a monophonic pitch tracker based on a deep convolutional neural network operating directly on the time-domain waveform input. CREPE is state-of-the-art (as of 2018), outperfoming popular pitch trackers such as pYIN and SWIPE:
 
